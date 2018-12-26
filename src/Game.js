@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Board from './Components/Board';
+function Game2() {
+ const [history, changeHistory] = useState({
+     history: [ { squares: Array(9).fill(null) } ],
+     stepNumber: 0,
+     xIsNext: true
+ });
 
+ const handleClick = (i) => {
+    // history.squares
+ }
+}
 
 class Game extends React.Component {
     constructor(props) {
@@ -18,7 +28,6 @@ class Game extends React.Component {
     }
 
     handleClick = (i) => {
-        debugger
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
